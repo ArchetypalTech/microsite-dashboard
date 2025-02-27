@@ -6,6 +6,8 @@ _Keeping track of all the microsites, incrementally_
 
 Each site will self publish tracking info during its deployment phase via the implemented workflow.
 
+Visit the [dashboard](https://microsites-dashboard.fly.dev/)
+
 **Requirement**
 
 - Add the following to a site's `package.json`
