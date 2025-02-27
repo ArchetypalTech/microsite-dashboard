@@ -1,38 +1,22 @@
-# sv
+## ![Arcetypal Repo](./archetypal-heading.jpg)
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# ArchetypalTech Microsite's Dashboard
 
-## Creating a project
+_Keeping track of all the microsites, incrementally_
 
-If you're seeing this, you've probably already done this step. Congrats!
+Each site will self publish tracking info during its deployment phase via the implemented workflow.
+**Requirement**
 
-```bash
-# create a new project in the current directory
-npx sv create
+- Add the following to a site's `package.json`
 
-# create a new project in my-app
-npx sv create my-app
+```json
+"meta": {
+    "ip": "198.23.24.25",
+    "host": "vercel",
+    "dev": "instance-red.archetypal.fly.io",
+    "prod": "app.archetypal.com",
+    "title": "Rolling",
+    "repo_ui": "github.com/1",
+    "repo_content": "github.com/2"
+}
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
