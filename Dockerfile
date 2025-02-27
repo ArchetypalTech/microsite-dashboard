@@ -3,7 +3,8 @@
 # Adjust NODE_VERSION as desired
 ARG NODE_VERSION=20.17.0
 FROM node:${NODE_VERSION}-slim AS base
-
+ARG PB_USER
+ARG PB_SECRET
 LABEL fly_launch_runtime="SvelteKit"
 
 # SvelteKit app lives here
@@ -31,6 +32,9 @@ RUN pnpm install --frozen-lockfile --prod=false
 # Copy application code
 COPY . .
 
+RUN touch .env
+RUN echo "PB_USER=$PB_USER" >> .env
+RUN echo "PB_SECRET=$PB_SECRET" >> .env
 # Build application
 RUN pnpm run build
 
