@@ -1,1 +1,12 @@
 @import 'tailwindcss';
+
+nav {
+	background-color: transparent !important;
+}
+nav + main {
+	margin-top: 4em;
+}
+[id^='sketch'] {
+	top: 0;
+	/* background-color: darkolivegreen; */
+}

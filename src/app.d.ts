@@ -8,6 +8,21 @@ declare global {
 		// interface PageState {}
 		// interface Platform {}
 	}
+	interface Site {
+		ip: string;
+		host: string;
+		private: boolean;
+		dev: string;
+		prod: string;
+		health: boolean;
+		version: string;
+		repo_ui: string;
+		repo_content: string;
+		title: string;
+		description: string;
+		name: string;
+		count: number;
+	}
 }
 
 export {};

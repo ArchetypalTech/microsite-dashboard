@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write .",
-		"lint": "prettier --check ."
+		"lint": "prettier --check .",
+		"svg": "pnpm dlx svg-symbol-sprite -i ./icons -o ./static/sprites.svg"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-node": "^5.2.11",
@@ -31,5 +32,11 @@
 		"onlyBuiltDependencies": [
 			"esbuild"
 		]
+	},
+	"dependencies": {
+		"@archetypaltech/ayiui": "^0.4.0",
+		"@types/p5": "^1.7.6",
+		"p5": "^1.11.3",
+		"pocketbase": "^0.25.1"
 	}
 }
