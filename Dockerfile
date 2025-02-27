@@ -29,13 +29,13 @@ RUN apt-get update -qq && \
 COPY .npmrc package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile --prod=false
 
-# Copy application code
-COPY . .
 
 RUN touch .env
 RUN echo "PB_USER=$PB_USER" >> .env
 RUN echo "PB_SECRET=$PB_SECRET" >> .env
 RUN cat .env
+# Copy application code
+COPY . .
 # Build application
 RUN pnpm run build
 
