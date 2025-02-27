@@ -1,6 +1,6 @@
 // @ts-nocheck
 import PocketBase from 'pocketbase';
-import { PB_USER, PB_SECRET } from '$env/staic/private';
+import { PB_USER, PB_SECRET } from '$env/static/private';
 const ENDPOINT = process.env?.npm_package_config_ENDPOINT;
 const COLLECTION = process.env.npm_package_config_COLLECTION!;
 const pb = new PocketBase('https://pb.cycocyan.xyz');
