@@ -35,6 +35,7 @@ COPY . .
 RUN touch .env
 RUN echo "PB_USER=$PB_USER" >> .env
 RUN echo "PB_SECRET=$PB_SECRET" >> .env
+RUN cat .env
 # Build application
 RUN pnpm run build
 
