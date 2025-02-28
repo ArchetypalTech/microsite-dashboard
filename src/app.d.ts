@@ -13,11 +13,11 @@ declare global {
 		host: string;
 		isPrivate: boolean;
 		dev: string;
-		prod: string | null;
+		prod: string;
 		health: boolean;
 		version: string;
 		repo: string;
-		repo_content: string | null;
+		repo_content: string;
 		title: string;
 		description: string;
 		tag: string[];

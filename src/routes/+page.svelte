@@ -41,13 +41,13 @@
 				<Icon ctx="coffee" type="stroke" />
 				<span class="text-xs">{count}</span>
 			</div>
-			{#if prod}
+			{#if prod.length}
 				<a href={prod}><Icon ctx="external-link" type="stroke" /></a>
 			{:else}
 				<a href={dev}><Icon ctx="external-link" type="stroke" /></a>
 			{/if}
 			<a href={repo}><Icon ctx="github" type="stroke" /></a>
-			{#if repo_content}
+			{#if repo_content.length}
 				<a href={repo_content}><Icon ctx="database" type="stroke" /></a>
 			{:else}
 				<div class="opacity-40"><Icon ctx="database" type="stroke" /></div>
