@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+.bg-whitesmoke {
+	background-color: whitesmoke;
+}
+
 nav {
 	background-color: transparent !important;
 }

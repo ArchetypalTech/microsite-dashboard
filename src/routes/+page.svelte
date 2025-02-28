@@ -29,7 +29,7 @@
 	isPrivate
 }: Site)}
 	<div
-		class="card border-w-4 flex flex-col gap-4 rounded-lg border-2 p-6 shadow-md backdrop-blur-lg"
+		class="card border-w-4 flex flex-col gap-2 rounded-lg border-2 p-6 shadow-md backdrop-blur-lg"
 	>
 		<div class="flex flex-row items-center justify-between">
 			{#if isPrivate}
@@ -55,12 +55,18 @@
 			<div data-health-state={health}></div>
 		</div>
 		<div class="flex items-center justify-between">
-			<h2 class="font-bold">{name}</h2>
-			<code class="rounded-md border-2 px-2 text-sm text-slate-400">{version}</code>
+			<div class="flex flex-col items-start">
+				<h2 class="font-bold">{title}</h2>
+				<h3 class="text-xs">{name}</h3>
+			</div>
+			<code class="bg-whitesmoke rounded-md border-2 px-2 text-sm text-slate-400">{version}</code>
 		</div>
 		<div class="flex items-center justify-between">
 			<code class="rounded-md border-2 bg-slate-200 px-2">{ip}</code>
-			<a href={dev}>{host}</a>
+			<div class="flex gap-2">
+				<a href={dev}>{host}</a>
+				<Icon ctx="server" type="stroke" />
+			</div>
 		</div>
 		<div class="description">{description}</div>
 	</div>
