@@ -11,15 +11,16 @@ declare global {
 	interface Site {
 		ip: string;
 		host: string;
-		private: boolean;
+		isPrivate: boolean;
 		dev: string;
-		prod: string;
+		prod: string | null;
 		health: boolean;
 		version: string;
-		repo_ui: string;
-		repo_content: string;
+		repo: string;
+		repo_content: string | null;
 		title: string;
 		description: string;
+		tag: string[];
 		name: string;
 		count: number;
 	}

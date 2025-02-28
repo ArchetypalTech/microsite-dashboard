@@ -2,8 +2,6 @@
 	import { Nav, Icon } from '@archetypaltech/ayiui';
 	import Packed from '$lib/components/packed.svelte';
 	import { onMount } from 'svelte';
-
-	// import type { Snippet } from "svelte";
 	const { data } = $props();
 
 	let w = $state(1024);
@@ -14,23 +12,22 @@
 	});
 </script>
 
-{#snippet microcard(
-	{
-		ip,
-		name,
-		title,
-		repo_ui,
-		repo_content,
-		version,
-		health,
-		description,
-		count,
-		dev,
-		prod,
-		host
-	}: Site,
-	isPrivate: boolean
-)}
+{#snippet microcard({
+	ip,
+	name,
+	title,
+	repo,
+	repo_content,
+	version,
+	health,
+	description,
+	tag,
+	count,
+	dev,
+	prod,
+	host,
+	isPrivate
+}: Site)}
 	<div
 		class="card border-w-4 flex flex-col gap-4 rounded-lg border-2 p-6 shadow-md backdrop-blur-lg"
 	>
@@ -44,12 +41,21 @@
 				<Icon ctx="coffee" type="stroke" />
 				<span class="text-xs">{count}</span>
 			</div>
-			<a href={prod}><Icon ctx="external-link" type="stroke" /></a>
-			<a href={repo_ui}><Icon ctx="github" type="stroke" /></a>
+			{#if prod}
+				<a href={prod}><Icon ctx="external-link" type="stroke" /></a>
+			{:else}
+				<a href={dev}><Icon ctx="external-link" type="stroke" /></a>
+			{/if}
+			<a href={repo}><Icon ctx="github" type="stroke" /></a>
+			{#if repo_content}
+				<a href={repo_content}><Icon ctx="database" type="stroke" /></a>
+			{:else}
+				<div class="opacity-40"><Icon ctx="database" type="stroke" /></div>
+			{/if}
 			<div data-health-state={health}></div>
 		</div>
 		<div class="flex items-center justify-between">
-			<h2>{name}</h2>
+			<h2 class="font-bold">{name}</h2>
 			<code class="rounded-md border-2 px-2 text-sm text-slate-400">{version}</code>
 		</div>
 		<div class="flex items-center justify-between">
@@ -80,7 +86,7 @@
 	</header>
 	<div class="microsites grow p-3">
 		{#each data.collection as site}
-			{@render microcard(site, site.private)}
+			{@render microcard(site)}
 		{/each}
 	</div>
 </main>

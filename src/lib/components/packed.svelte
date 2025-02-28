@@ -15,7 +15,7 @@
 		colour?: string;
 		opacity?: string;
 		nodes?: 'MIN' | 'MAX' | 'BOTH' | null;
-		position?: null | 'absolute';
+		position?: null | 'absolute' | 'fixed';
 	}
 
 	const {
@@ -75,6 +75,13 @@
 					el.style.zIndex = '-1';
 					el.style.opacity = opacity;
 					el.style.width = '100%';
+				}
+				if (el && position === 'fixed') {
+					el.style.position = 'fixed';
+					el.style.zIndex = '-1';
+					el.style.opacity = opacity;
+					el.style.width = '100%';
+					el.style.top = '0';
 				}
 			};
 
