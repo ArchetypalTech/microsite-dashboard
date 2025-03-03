@@ -81,7 +81,7 @@
 	margin={20}
 	minRadius={100}
 	maxRadius={200}
-	position="absolute"
+	position="fixed"
 	opacity=".125"
 	colour="black"
 />
