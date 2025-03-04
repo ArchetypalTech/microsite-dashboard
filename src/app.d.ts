@@ -23,6 +23,7 @@ declare global {
 		tag: string[];
 		name: string;
 		count: number;
+		org: 'ARC' | 'SEM';
 	}
 }
 

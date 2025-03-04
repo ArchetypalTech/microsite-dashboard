@@ -26,10 +26,11 @@
 	dev,
 	prod,
 	host,
-	isPrivate
+	isPrivate,
+	org
 }: Site)}
 	<div
-		class="card border-w-4 flex flex-col gap-2 rounded-lg border-2 p-6 shadow-md backdrop-blur-lg"
+		class="card border-w-4 ÷rounded-lg flex flex-col gap-2 border-2 p-6 shadow-md backdrop-blur-lg"
 	>
 		<div class="flex flex-row items-center justify-between">
 			{#if isPrivate}
@@ -68,7 +69,14 @@
 				<Icon ctx="server" type="stroke" />
 			</div>
 		</div>
-		<div class="description">{description}</div>
+		<div class="flex h-[100%] min-h-0 items-end justify-between">
+			<div class="description self-start">{description}</div>
+			{#if org === 'ARC'}
+				<Icon ctx="Archetypal" type="fill" />
+			{:else}
+				<img class="sem-logo" src="/semaeopus.png" alt="Semaeopus Ltd." />
+			{/if}
+		</div>
 	</div>
 {/snippet}
 <Packed
@@ -98,6 +106,10 @@
 </main>
 
 <style>
+	.sem-logo {
+		width: 2em;
+		height: auto;
+	}
 	.badge {
 		color: white;
 		padding: 0.25em 0.5em;
@@ -127,5 +139,13 @@
 	}
 	[data-health-state='false'] {
 		background-color: red;
+	}
+	:global(nav) {
+		padding: 0;
+	}
+	:global(._icon) {
+		padding: 0.5em !important;
+		background-color: white !important;
+		border-radius: 50%;
 	}
 </style>
