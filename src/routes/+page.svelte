@@ -30,7 +30,7 @@
 	org
 }: Site)}
 	<div
-		class="card border-w-4 ÷rounded-lg flex flex-col gap-2 border-2 p-6 shadow-md backdrop-blur-lg"
+		class="card border-w-4 flex flex-col gap-2 rounded-lg border-2 p-6 shadow-md backdrop-blur-lg"
 	>
 		<div class="flex flex-row items-center justify-between">
 			{#if isPrivate}
@@ -143,7 +143,7 @@
 	:global(nav) {
 		padding: 0;
 	}
-	:global(._icon) {
+	:global(nav ._icon) {
 		padding: 0.5em !important;
 		background-color: white !important;
 		border-radius: 50%;
