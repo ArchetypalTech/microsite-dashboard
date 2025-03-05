@@ -144,8 +144,8 @@
 		padding: 0;
 	}
 	:global(nav ._icon) {
-		padding: 0.5em !important;
-		background-color: white !important;
+		padding: 0.5em;
+		backdrop-filter: blur(1em);
 		border-radius: 50%;
 	}
 </style>
