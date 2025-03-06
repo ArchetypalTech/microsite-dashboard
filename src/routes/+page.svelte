@@ -144,7 +144,7 @@
 		padding: 0;
 	}
 	:global(nav ._icon) {
-		padding: 0.5em;
+		padding: 0.5em !important;
 		backdrop-filter: blur(1em);
 		border-radius: 50%;
 	}
