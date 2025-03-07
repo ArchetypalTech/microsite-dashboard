@@ -60,12 +60,17 @@
 				<h2 class="font-bold">{title}</h2>
 				<h3 class="text-xs">{name}</h3>
 			</div>
-			<code class="bg-whitesmoke rounded-md border-2 px-2 text-sm text-slate-400">{version}</code>
+			<div class="flex flex-col gap-1">
+				<code class="bg-whitesmoke rounded-md border-2 px-2 text-center text-xs text-slate-700"
+					>{version}</code
+				>
+				<span class="badge bg-slate-700 text-center text-xs text-white">{tag}</span>
+			</div>
 		</div>
 		<div class="flex items-center justify-between">
 			<code class="rounded-md border-2 bg-slate-200 px-2">{ip}</code>
 			<div class="flex gap-2">
-				<a href={dev}>{host}</a>
+				<a class="link" href={dev}>{host}</a>
 				<Icon ctx="server" type="stroke" />
 			</div>
 		</div>
@@ -147,5 +152,26 @@
 		padding: 0.5em !important;
 		backdrop-filter: blur(1em);
 		border-radius: 50%;
+	}
+	.link {
+		position: relative;
+		cursor: pointer;
+		&:hover,
+		&:focus {
+			&:before {
+				width: 100%;
+				left: 0em;
+				border-color: currentColor;
+			}
+		}
+		&:before {
+			border: 1px solid transparent;
+			transition: all 0.3s;
+			position: absolute;
+			content: '';
+			bottom: -2px;
+			left: 50%;
+			width: 0%;
+		}
 	}
 </style>
